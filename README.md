@@ -26,10 +26,10 @@ A Node.js REST API for managing events and user registrations built with Express
 
 ### Installation
 
-1. **Clone the repository**
+1. **Clone the Repository**
    ```bash
-   git clone <repository-url>
-   cd event-management-api
+   git clone https://github.com/Kshitizjain11/Event-Management-Api.git
+   
    ```
 
 2. **Install dependencies**
