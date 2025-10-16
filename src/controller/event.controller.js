@@ -1,10 +1,10 @@
 import * as service from '../services/eventService.js';
 
-export async function createEvent(req, res, next) {
+export const createEvent =async (req, res, next) => {
   try {
     const { title, dateTime, location, capacity } = req.body || {};
     if (!title || !dateTime || !location || capacity == null) {
-      return res.status(400).json({ error: 'Missing required fields: title, dateTime, location, capacity' });
+      return res.status(400).json({ error: 'All fields are required' });
     }
     const result = await service.createEvent({ title, dateTime, location, capacity: Number(capacity) });
     res.status(201).json(result);
@@ -13,7 +13,7 @@ export async function createEvent(req, res, next) {
   }
 }
 
-export async function getEventDetails(req, res, next) {
+export const  getEventDetails = async(req, res, next) => {
   try {
     const { eventId } = req.params;
     const result = await service.getEventDetails(eventId);
@@ -23,7 +23,7 @@ export async function getEventDetails(req, res, next) {
   }
 }
 
-export async function registerForEvent(req, res, next) {
+export const registerForEvent = async(req, res, next)  => {
   try {
     const { eventId } = req.params;
     const { userId } = req.body || {};
@@ -37,7 +37,7 @@ export async function registerForEvent(req, res, next) {
   }
 }
 
-export async function cancelRegistration(req, res, next) {
+export const  cancelRegistration = async(req, res, next) => {
   try {
     const { eventId } = req.params;
     const { userId } = req.body || {};
@@ -51,7 +51,7 @@ export async function cancelRegistration(req, res, next) {
   }
 }
 
-export async function listUpcomingEvents(_req, res, next) {
+export const listUpcomingEvents = async(_req, res, next) => {
   try {
     const result = await service.listUpcomingEvents();
     res.json(result);
@@ -60,7 +60,7 @@ export async function listUpcomingEvents(_req, res, next) {
   }
 }
 
-export async function getEventStats(req, res, next) {
+export const getEventStats = async(req, res, next) => {
   try {
     const { eventId } = req.params;
     const result = await service.getEventStats(eventId);
