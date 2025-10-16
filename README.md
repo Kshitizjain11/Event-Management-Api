@@ -9,6 +9,13 @@ A Node.js REST API for managing events and user registrations built with Express
 - Event registration system
 - PostgreSQL database with Prisma ORM
 
+## 🛠 Tech Stack
+
+- **Backend**: Node.js, Express.js
+- **ORM**: Prisma
+- **Database**: PostgreSQL  (hosted on Supabase Cloud)
+- **Validation**: Express middleware
+
 ## Setup Instructions
 
 ### Prerequisites
@@ -59,7 +66,7 @@ A Node.js REST API for managing events and user registrations built with Express
 
 ### Base URL
 ```
-http://localhost:3005/api
+http://localhost:3000/api
 ```
 
 ### Endpoints
@@ -298,7 +305,3 @@ For detailed schema information, refer to `prisma/schema.prisma`.
 3. Add business logic in `src/services/`
 4. Update the Prisma schema if new models are needed
 5. Run `npx prisma generate` after schema changes
-
-## License
-
-ISC
